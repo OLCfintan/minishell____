@@ -20,6 +20,7 @@ void	pop(t_token **head)
 	tmp = (*head);
 	(*head) = (*head)->next;
 	free(tmp);
+	tmp = NULL;
 }
 
 void	remove_node(t_token **head, char *cmd)
@@ -33,6 +34,7 @@ void	remove_node(t_token **head, char *cmd)
 	{
 		(*head) = tmp->next;
 		free(tmp);
+		tmp = NULL;
 		return ;
 	}
 	while (tmp && tmp->value != cmd)
@@ -44,4 +46,5 @@ void	remove_node(t_token **head, char *cmd)
 		return ;
 	prev->next = tmp->next;
 	free(tmp);
+	tmp = NULL;
 }

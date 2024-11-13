@@ -1,4 +1,3 @@
-
 #include "../../include/minishell.h"
 
 t_token	*lexer_collect_larrow(t_lexer *lexer)

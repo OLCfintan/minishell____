@@ -11,6 +11,16 @@ t_redir *init_redirection(t_types type, char *file)
     return redir;
 }
 
+t_redir *redir_last(t_redir *redir)
+{
+    t_redir *tmp;
+
+    tmp = redir;
+    while(tmp->next)
+        tmp = tmp->next;
+
+    return tmp;
+}
 
 void add_redirection(t_cmd *cmd, t_types type, char *file)
 {
@@ -23,11 +33,8 @@ void add_redirection(t_cmd *cmd, t_types type, char *file)
     }
     else
     {
-        t_redir *last = cmd->redirections;
-        while (last->next)
-        {
-            last = last->next;
-        }
+        t_redir *last;
+        last  = redir_last(cmd->redirections);
         last->next = redir;
     }
 }

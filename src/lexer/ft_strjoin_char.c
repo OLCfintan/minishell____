@@ -19,5 +19,6 @@ char	*ft_strjoin_char(char *s1, char c)
 	str[j++] = c;
 	str[j] = '\0';
 	free(s1);
+	s1 = NULL;
 	return (str);
 }

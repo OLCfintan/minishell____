@@ -54,13 +54,6 @@ typedef struct s_parser
 	struct s_parser	*next;
 }	t_parser;
 
-typedef struct s_minishell
-{
-	char	*line;
-	t_lexer	*lexer;
-	char	**env;
-}	t_minishell;
-//
 
 typedef struct s_redir//for reddirections
 {
@@ -78,6 +71,14 @@ typedef struct s_cmd // each node is a command without pip so if moving to next 
     t_redir *redirections;//store name of files for in and out and the type of reddirections
     struct s_cmd *next;//means next pip
 }  t_cmd;
+
+typedef struct s_minishell
+{
+    char *line;
+    char **env;
+    t_lexer *lexer;
+    t_cmd *cmd;
+}  t_minishell;
 /* ===== Prototypes ===== */
 
 // Minishell

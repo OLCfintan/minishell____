@@ -19,7 +19,7 @@ $(NAME): $(OBJ)
 	@echo "$(ORANGE)Linking $(NAME)...$(NC)"
 
 $(OBJ): %.o: %.c
-	@$(CC) $(CFLAGS) -c $< -o $@ >/dev/null
+	@$(CC) $(CFLAGS) -c $< -g -o $@ >/dev/null
 	@echo "$(GREEN)Compiling $<$(NC)"
 
 clean:

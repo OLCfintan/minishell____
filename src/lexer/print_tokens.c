@@ -19,4 +19,5 @@ void	print_tokens(t_lexer *lexer, char **env)
 	printf("|-----------------|-----------------|\n");
 	free(token->value);
 	free(token);
+	token = NULL;
 }

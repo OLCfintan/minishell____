@@ -20,5 +20,5 @@ char	*ft_strjoin(char *stash, char *buff)
 	while (buff[++j])
 		temp[i++] = buff[j];
 	temp[i] = '\0';
-	return (free(stash), free(buff), temp);
+	return (free(stash), stash = NULL, free(buff), buff = NULL, temp);
 }
